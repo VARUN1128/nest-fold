@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: #F5EFE4;
+    --color-walnut: #5C3D2E;
+    --color-rattan: #C8A96E;
+    --color-sage: #7A9E7E;
+    --color-clay: #B5714A;
+    --color-charcoal: #2A2420;
+  }
+
+  body {
+    background-color: #F5EFE4;
+    color: #2A2420;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+  }
+}
+
+/* Editorial subtle linen texture */
+.bg-subtle-grain {
+  background-image: radial-gradient(rgba(42, 36, 32, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom smooth transitions */
+.transition-editorial {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hide scrollbar for gallery thumbnails */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
