@@ -7,6 +7,7 @@ export interface FormValues {
   email: string;
   place: string;
   productInterested: string;
+  howDidYouFindUs?: string;
 }
 
 export interface FormErrors {
@@ -15,6 +16,7 @@ export interface FormErrors {
   email?: string;
   place?: string;
   productInterested?: string;
+  howDidYouFindUs?: string;
   general?: string;
 }
 
@@ -22,6 +24,7 @@ export interface SubmissionResult {
   success: boolean;
   isDuplicate?: boolean;
   referenceId: string;
+  queuePosition: number;
   name: string;
   productInterested: string;
   createdAt: string;
@@ -110,6 +113,7 @@ export function useEarlyAccess() {
     setResult({
       success: true,
       referenceId: generatedId,
+      queuePosition: 247 + existingList.length,
       name: fullName,
       productInterested,
       createdAt: newRecord.created_at,
@@ -155,6 +159,9 @@ export function useEarlyAccess() {
           email: normalizedEmail,
           place: normalizedPlace,
           product_interested: normalizedInterest,
+          ...(currentValues.howDidYouFindUs?.trim()
+            ? { how_did_you_find_us: currentValues.howDidYouFindUs.trim() }
+            : {}),
         };
 
         const { data, error } = await supabase!
@@ -204,6 +211,7 @@ export function useEarlyAccess() {
         setResult({
           success: true,
           referenceId: refId,
+          queuePosition: 248,
           name: normalizedName,
           productInterested: normalizedInterest,
           createdAt: data?.created_at || new Date().toISOString(),

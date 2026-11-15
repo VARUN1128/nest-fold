@@ -7,13 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        ink: {
+          DEFAULT: '#1A1208',
+          light: '#2A2014',
+          deep: '#120C05',
+        },
         walnut: {
-          DEFAULT: '#5C3D2E',
-          deep: '#472E22',
-          light: '#724F3D',
+          DEFAULT: '#1A1208',
+          deep: '#120C05',
+          light: '#5C3D2E',
         },
         cream: {
-          DEFAULT: '#F5EFE4',
+          DEFAULT: '#F7F0E3',
+          warm: '#F5EFE4',
           surface: '#FAF7F0',
           dark: '#EAE1D2',
         },
@@ -22,21 +28,25 @@ export default {
           light: '#DBC392',
           dark: '#A6884E',
         },
+        burntOrange: {
+          DEFAULT: '#D4541A',
+          hover: '#BA4512',
+          light: '#E26730',
+        },
         sage: {
           DEFAULT: '#7A9E7E',
           hover: '#688B6C',
           light: '#9BB89E',
-          dark: '#59755D',
         },
         clay: {
-          DEFAULT: '#B5714A',
-          hover: '#A0603B',
-          light: '#C98965',
+          DEFAULT: '#8B4513',
+          warm: '#B5714A',
+          light: '#A0521D',
         },
         charcoal: {
-          DEFAULT: '#2A2420',
-          dark: '#1C1714',
-          muted: '#524944',
+          DEFAULT: '#1A1208',
+          trueBlack: '#0D0A04',
+          muted: '#4A3E31',
         },
       },
       fontFamily: {
@@ -46,6 +56,7 @@ export default {
       letterSpacing: {
         widest: '.2em',
         caps: '.15em',
+        tracked: '.25em',
       },
     },
   },

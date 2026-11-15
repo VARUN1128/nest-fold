@@ -12,6 +12,7 @@ import { Accessories } from './pages/Accessories';
 import { Journal } from './pages/Journal';
 import { JournalArticle } from './pages/JournalArticle';
 import { EarlyAccess } from './pages/EarlyAccess';
+import { Admin } from './pages/Admin';
 
 // Scroll to top helper on route transitions
 const ScrollToTop: React.FC = () => {
@@ -40,6 +41,7 @@ export const App: React.FC = () => {
             <Route path="/journal" element={<Journal />} />
             <Route path="/journal/:slug" element={<JournalArticle />} />
             <Route path="/early-access" element={<EarlyAccess />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>

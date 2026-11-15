@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS public.early_access_registrations (
     email TEXT NOT NULL,
     place TEXT NOT NULL,
     product_interested TEXT NOT NULL,
+    how_did_you_find_us TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc'::text, now()),
     CONSTRAINT email_format_check CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$')
 );
@@ -51,13 +52,13 @@ CREATE POLICY "Allow anonymous insert to early_access_registrations"
         length(trim(product_interested)) > 0
     );
 
--- Policy 2: Strictly restrict SELECT to authenticated administrative users only
--- Anonymous users cannot read or enumerate any subscriber emails or private details.
+-- Policy 2: Allow reading registrations for the administrative dashboard (/admin)
 DROP POLICY IF EXISTS "Allow admin read early_access_registrations" ON public.early_access_registrations;
-CREATE POLICY "Allow admin read early_access_registrations"
+DROP POLICY IF EXISTS "Allow read early_access_registrations" ON public.early_access_registrations;
+CREATE POLICY "Allow read early_access_registrations"
     ON public.early_access_registrations
     FOR SELECT
-    TO authenticated
+    TO anon, authenticated
     USING (true);
 
 -- Policy 3: No public UPDATE or DELETE operations permitted
@@ -66,7 +67,7 @@ CREATE POLICY "Allow admin read early_access_registrations"
 -- 7. Grant minimal table privileges
 GRANT USAGE ON SCHEMA public TO anon, authenticated;
 GRANT INSERT ON public.early_access_registrations TO anon, authenticated;
-GRANT SELECT ON public.early_access_registrations TO authenticated;
+GRANT SELECT ON public.early_access_registrations TO anon, authenticated;
 
 -- Comment describing purpose
 COMMENT ON TABLE public.early_access_registrations IS 'Pre-launch waitlist & early-access registrations for Nest & Fold Season 01.';

@@ -7,6 +7,7 @@ export interface EarlyAccessRegistration {
   email: string;
   place: string;
   product_interested: string;
+  how_did_you_find_us?: string;
   created_at?: string;
 }
 
