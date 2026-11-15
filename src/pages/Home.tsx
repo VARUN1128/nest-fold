@@ -59,11 +59,37 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Social Proof / Limited Badge */}
-          <div className="mt-14 pt-8 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-[11px] uppercase tracking-[0.2em] text-[#F5EFE4]/70">
+          {/* Mobile: Horizontally running infinite marquee */}
+          <div className="sm:hidden w-full overflow-hidden mt-12 pt-6 border-t border-white/15 relative">
+            <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-[#2A2420] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-[#2A2420] to-transparent z-10 pointer-events-none"></div>
+
+            <div className="animate-marquee flex items-center text-[10px] uppercase tracking-[0.22em] text-[#F5EFE4]/80 whitespace-nowrap">
+              <span className="flex items-center gap-4 px-3">
+                <span>Only 75 numbered units</span>
+                <span className="text-[#C8A96E]">·</span>
+                <span>Nilambur Walnut &amp; Cane</span>
+                <span className="text-[#C8A96E]">·</span>
+                <span>Made for flats under 600 sq ft</span>
+                <span className="text-[#C8A96E]">·</span>
+              </span>
+              <span className="flex items-center gap-4 px-3">
+                <span>Only 75 numbered units</span>
+                <span className="text-[#C8A96E]">·</span>
+                <span>Nilambur Walnut &amp; Cane</span>
+                <span className="text-[#C8A96E]">·</span>
+                <span>Made for flats under 600 sq ft</span>
+                <span className="text-[#C8A96E]">·</span>
+              </span>
+            </div>
+          </div>
+
+          {/* Desktop & Tablet: Centered Badges */}
+          <div className="hidden sm:flex mt-14 pt-8 border-t border-white/15 flex-wrap items-center justify-center gap-6 sm:gap-12 text-[11px] uppercase tracking-[0.2em] text-[#F5EFE4]/70">
             <span>Only 75 numbered units</span>
-            <span className="hidden sm:inline text-[#C8A96E]">·</span>
+            <span className="text-[#C8A96E]">·</span>
             <span>Nilambur Walnut &amp; Cane</span>
-            <span className="hidden sm:inline text-[#C8A96E]">·</span>
+            <span className="text-[#C8A96E]">·</span>
             <span>Made for flats under 600 sq ft</span>
           </div>
         </div>
