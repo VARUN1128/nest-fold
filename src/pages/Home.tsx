@@ -295,19 +295,19 @@ export const Home: React.FC = () => {
             <div>
               <div className="relative aspect-[4/3] bg-[#EAE1D2] overflow-hidden rounded-sm mb-6">
                 <img
-                  src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
-                  alt="Convertible daybed and sofa system"
+                  src="/products/the-flip-lounge.jpg"
+                  alt="The Flip Lounge - The Fold-Out Floor Cloud"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute bottom-3 left-3 bg-[#2A2420]/80 text-[#F5EFE4] px-3 py-1 text-[10px] uppercase tracking-[0.2em]">
-                  03 · Convert When Needed
+                  03 · Fold-Out Cloud
                 </span>
               </div>
               <h3 className="font-serif text-2xl text-[#5C3D2E] mb-2 font-light">
-                Converts in One Motion
+                The Flip Lounge
               </h3>
               <p className="font-sans text-xs sm:text-sm text-[#2A2420]/75 leading-relaxed">
-                Daybeds that slide open smoothly without requiring you to move surrounding furniture or wrestle with noisy steel springs.
+                Designed for small spaces and big lounging. Fold it up to save space, or stretch it out to kick back and relax in rich, retro-inspired fabric.
               </p>
             </div>
           </div>
@@ -390,7 +390,7 @@ export const Home: React.FC = () => {
                   </div>
 
                   <div className="flex justify-between items-center pt-2">
-                    <span className="text-[#2A2420]/70">Iruppu Daybed</span>
+                    <span className="text-[#2A2420]/70">The Flip Lounge</span>
                     <span className="font-mono font-medium text-[#5C3D2E]">25 of 25 Available</span>
                   </div>
                   <div className="w-full bg-[#EAE1D2] h-1.5 rounded-full overflow-hidden">

@@ -15,7 +15,9 @@ import {
 export const ProductDetails: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
 
-  const product = season01Products.find((p) => p.slug === slug);
+  const product = season01Products.find(
+    (p) => p.slug === slug || (slug === 'convertible-sofa-bed' && p.slug === 'the-flip-lounge')
+  );
 
   if (!product) {
     return <Navigate to="/collection" replace />;
@@ -33,7 +35,7 @@ export const ProductDetails: React.FC = () => {
         <span className="text-[#5C3D2E] font-medium">{product.name}</span>
       </div>
 
-      {/* Main Product Showcase */}
+      {/* Primary Showcase */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 py-8 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Image Gallery */}
@@ -134,6 +136,58 @@ export const ProductDetails: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Featured Feature Spotlight: e.g. "Tray-dition" — Lift-Off & Serve */}
+      {product.featureSpotlight && (
+        <section className="py-16 sm:py-24 bg-[#FAF7F0] border-t border-[#5C3D2E]/10">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              {product.featureSpotlight.image && (
+                <div className="lg:col-span-6 relative aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/5] rounded-sm overflow-hidden bg-[#EAE1D2] border border-[#5C3D2E]/15 shadow-md">
+                  <img
+                    src={product.featureSpotlight.image}
+                    alt={product.featureSpotlight.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute top-4 left-4 bg-[#2A2420]/80 backdrop-blur-sm text-[#F5EFE4] text-[10px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm">
+                    In Action · Compact Living
+                  </div>
+                </div>
+              )}
+
+              <div className={`${product.featureSpotlight.image ? 'lg:col-span-6' : 'lg:col-span-12'} space-y-6`}>
+                <span className="font-sans text-[11px] font-medium tracking-[0.28em] uppercase text-[#7A9E7E] block">
+                  Spatial Innovation · Signature Feature
+                </span>
+
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#5C3D2E] font-light leading-tight">
+                  {product.featureSpotlight.title}
+                </h2>
+
+                {product.featureSpotlight.subtitle && (
+                  <p className="font-serif italic text-xl text-[#C8A96E]">
+                    {product.featureSpotlight.subtitle}
+                  </p>
+                )}
+
+                <p className="font-sans text-sm sm:text-base text-[#2A2420]/85 leading-relaxed font-light">
+                  {product.featureSpotlight.description}
+                </p>
+
+                <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <Link
+                    to={`/early-access?product=${encodeURIComponent(product.name)}`}
+                    className="inline-flex items-center justify-center px-6 py-3.5 bg-[#7A9E7E] hover:bg-[#688B6C] text-[#FAF7F0] text-xs font-medium uppercase tracking-[0.2em] rounded-sm transition-all shadow-sm"
+                  >
+                    <span>Reserve Early Access</span>
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Explore Other Season 01 Pieces */}
       <section className="py-20 max-w-7xl mx-auto px-6 sm:px-8 border-t border-[#5C3D2E]/10">

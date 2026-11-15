@@ -14,6 +14,12 @@ export interface Product {
   fullDescription: string;
   spaceSolvingFeature: string;
   craftDetails: string;
+  featureSpotlight?: {
+    title: string;
+    subtitle?: string;
+    description: string;
+    image?: string;
+  };
   images: {
     hero: string;
     gallery: string[];
@@ -35,17 +41,23 @@ export const season01Products: Product[] = [
     dimensions: '48 cm diameter · 45 cm / 52 cm dual height',
     leadTime: 'Fulfills in 5–6 weeks direct from our craftsmen in Kerala',
     craftLocation: 'Thrissur & Nilambur workshops, Kerala',
-    shortDescription: 'Turned wood side table with handwoven rattan companion. Dual-tiered nesting structure that tucks away in seconds.',
-    fullDescription: 'Designed specifically for living rooms that double as home offices and dining spaces. The Vazha Nesting Side Table pairs hand-turned solid walnut with breathable natural cane mesh woven by traditional artisans in Kerala. The secondary table nests cleanly beneath the primary surface without scraping or resistance, sliding out smoothly when company arrives.',
-    spaceSolvingFeature: 'Nests down to a single 48cm cylinder footprint. Slides out to double tabletop area instantly.',
-    craftDetails: 'Every tabletop is turned on a traditional lathe by woodworkers with decades of experience, hand-sanded across three grits, and treated with cold-pressed natural linseed wax.',
+    shortDescription: 'Turned wood and rattan side table with lift-off serving tray. Cylindrical cane drum base with interior book storage and portable solid walnut serving tray.',
+    fullDescription: 'Designed specifically for living rooms that double as home offices and dining spaces. The Vazha Side Table pairs a hand-turned solid walnut serving top with a breathable natural cane drum base woven by traditional artisans in Kerala. Features our signature "Tray-dition" lift-off tray top and an open lower interior tailored to store art books and daily magazines.',
+    spaceSolvingFeature: '"Tray-dition" Lift-Off & Serve: The removable wooden top doubles as a sturdy carry-around tray—perfect for bringing drinks from the kitchen to the couch without taking up extra apartment space. Hollow cane drum stores books and cushions.',
+    craftDetails: 'Every tabletop and rim is turned on a traditional lathe by woodworkers with decades of experience, hand-sanded across three grits, and treated with cold-pressed natural linseed wax.',
+    featureSpotlight: {
+      title: '"Tray-dition" — Lift-Off & Serve',
+      subtitle: 'Dual-Purpose Living for Compact Flats',
+      description: 'The removable wooden top doubles as a sturdy carry-around tray—perfect for bringing drinks from the kitchen to the couch without taking up extra apartment space.',
+      image: '/products/vazha-side-table-tray.jpg',
+    },
     images: {
-      hero: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1200&q=80',
+      hero: '/products/vazha-side-table-tray.jpg',
       gallery: [
-        'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=1200&q=80',
+        '/products/vazha-side-table-tray.jpg',
+        '/products/vazha-side-table-tray-top.jpg',
+        '/products/vazha-side-table-base.jpg',
+        '/products/vazha-side-table-rattan-detail.jpg',
       ],
     },
     dropStatus: 'Limited Drop',
@@ -68,12 +80,12 @@ export const season01Products: Product[] = [
     spaceSolvingFeature: 'Combines open rack, accessory valet, dressing mirror ledge, and hidden storage seating in a minimal 60cm span.',
     craftDetails: 'Constructed using traditional blind mortise-and-tenon joints without visible screws. The cane panels are soaked in rainwater cisterns before tension-weaving to ensure lifelong tautness.',
     images: {
-      hero: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1200&q=80',
+      hero: 'https://images.unsplash.com/photo-1540221652346-e5dd6b50f3e7?auto=format&fit=crop&w=1200&q=80',
       gallery: [
-        'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1551298370-9d3d53740c72?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1540221652346-e5dd6b50f3e7?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1582582494705-f8ce0b0c24f0?auto=format&fit=crop&w=1200&q=80',
       ],
     },
     dropStatus: 'Limited Drop',
@@ -81,27 +93,38 @@ export const season01Products: Product[] = [
   },
   {
     id: 's01-03',
-    slug: 'convertible-sofa-bed',
-    name: 'Iruppu Convertible Daybed',
-    subtitle: 'Convertible Sofa Bed',
+    slug: 'the-flip-lounge',
+    name: 'The Flip Lounge',
+    subtitle: 'The Fold-Out Floor Cloud',
     category: 'Seating & Daybeds',
     season: 'Season 01 — The Compressed City',
-    indicativePrice: '₹26,500',
-    materials: ['Seasoned Solid Timber Frame', 'Woven Cane Backing', 'Organic Cotton-Linen Canvas', 'Natural Latex Core'],
-    dimensions: '190 cm width · 82 cm depth (extends to 140 cm bed)',
-    leadTime: 'Fulfills in 6 weeks direct from our craftsmen in Kerala',
-    craftLocation: 'Ernakulam & Thrissur workshops, Kerala',
-    shortDescription: 'Space-saving meets artisan design. Transforms seamlessly from a tailored 3-seater couch into a queen floor daybed.',
-    fullDescription: 'Never looks like a hospital cot or a metal contraption. The Iruppu Sofa Bed honors the calm dignity of traditional Kerala veranda daybeds (Charupadi) while introducing a counterbalance slide mechanism that glides forward with one hand. Finished with breathable rattan lattice along the backrest to keep air circulating during humid coastal nights.',
-    spaceSolvingFeature: 'One-hand sliding platform converts from living sofa to sleep bed without moving the frame away from the wall.',
-    craftDetails: 'The internal slide system uses dry-waxed hardwood tracks rather than noisy steel hinges, guaranteeing silent longevity and seamless conversion year after year.',
+    indicativePrice: '₹24,500',
+    materials: [
+      'Multi-Density Ergonomic Core',
+      'Rich Retro-Inspired Ribbed Corduroy',
+      'Heavy-Duty Articulating Joint System',
+      'Reinforced Bottom Webbing & Pull Loops',
+    ],
+    dimensions: '95 cm width · 100 cm depth (folded lounge) · 195 cm length (flat daybed)',
+    leadTime: 'Fulfills in 4–5 weeks direct from our craftsmen in Kerala',
+    craftLocation: 'Kochi & Thrissur workshops, Kerala',
+    shortDescription: 'Designed for small spaces and big lounging. Fold it up to save space, or stretch it out to kick back and relax. Available in rich, retro-inspired fabric.',
+    fullDescription: 'Designed for small spaces and big lounging. The Flip Lounge is the fold-out floor cloud engineered for modern apartment life. Fold it up into a structured, supportive lounge seat to save precious square footage—or stretch it out in seconds into an expansive floor daybed to kick back, play games, or host overnight guests.',
+    spaceSolvingFeature: 'The Fold-Out Floor Cloud: Fold it up to save space, or stretch it out to kick back and relax. Transitions effortlessly between upright lounge chair and full floor daybed.',
+    craftDetails: 'Hand-tailored by our workshop team in Kerala with high-resilience layered foam that retains its loft over time. Upholstered in rich, retro-inspired corduroy with contrast piping and heavy-duty concealed zips.',
+    featureSpotlight: {
+      title: '"The Flip Lounge" — The Fold-Out Floor Cloud',
+      subtitle: 'Small Spaces. Big Lounging.',
+      description: 'Designed for small spaces and big lounging. Fold it up to save space, or stretch it out to kick back and relax. Available in rich, retro-inspired fabric.',
+      image: '/products/the-flip-lounge.jpg',
+    },
     images: {
-      hero: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80',
+      hero: '/products/the-flip-lounge.jpg',
       gallery: [
-        'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1512212621149-107ffe572d2f?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1200&q=80',
+        '/products/the-flip-lounge.jpg',
+        '/products/the-flip-lounge-folded.jpg',
+        '/products/the-flip-lounge-flat.jpg',
+        '/products/the-flip-lounge-detail.jpg',
       ],
     },
     dropStatus: 'Limited Drop',
