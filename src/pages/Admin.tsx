@@ -204,7 +204,7 @@ export const Admin: React.FC = () => {
   // PASSCODE GATE SCREEN
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#F7F0E3] flex items-center justify-center px-4 py-20">
+      <div className="min-h-screen bg-[#F7F0E3] flex items-center justify-center px-4 pt-28 sm:pt-32 pb-16">
         <div className="w-full max-w-md bg-[#FAF7F0] border border-[#1A1208]/15 p-8 sm:p-10 rounded-sm shadow-xl">
           <div className="w-12 h-12 bg-[#1A1208] text-[#C8A96E] rounded-full flex items-center justify-center mb-6">
             <Lock className="w-6 h-6" />
@@ -262,7 +262,7 @@ export const Admin: React.FC = () => {
 
   // MAIN DASHBOARD SCREEN
   return (
-    <div className="min-h-screen bg-[#F7F0E3] text-[#1A1208] pt-28 pb-20 px-4 sm:px-8">
+    <div className="min-h-screen bg-[#F7F0E3] text-[#1A1208] pt-28 sm:pt-36 md:pt-40 pb-20 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Top Header & Actions */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#1A1208]/15">

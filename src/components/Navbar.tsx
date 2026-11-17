@@ -10,6 +10,7 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
 
   const isHome = location.pathname === '/';
+  const isAdmin = location.pathname.startsWith('/admin');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,8 +53,8 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      {/* Persistent Announcement Bar: SEASON 01 WAITLIST OPEN — 247 SPOTS CLAIMED */}
-      <AnnouncementBar />
+      {/* Persistent Announcement Bar (Hidden in Admin Portal) */}
+      {!isAdmin && <AnnouncementBar />}
 
       <div className={`transition-all duration-300 border-b ${navBg}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
@@ -83,7 +84,7 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Right: Burnt Orange Waitlist Button & Mobile Toggle */}
-          <div className="flex items-center justify-end space-x-2 sm:space-x-4 shrink-0">
+          <div className="flex items-center justify-end space-x-2 sm:space-x-4 shrink-0 md:ml-12 lg:ml-16">
             <Link
               to="/early-access"
               className="inline-flex items-center justify-center px-3.5 py-1.5 sm:px-5 sm:py-2.5 bg-[#D4541A] hover:bg-[#BA4512] text-[#F7F0E3] text-[10px] sm:text-xs font-medium uppercase tracking-[0.16em] sm:tracking-[0.18em] rounded-sm transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
@@ -125,7 +126,7 @@ export const Navbar: React.FC = () => {
                 <span className="text-[#C8A96E] text-xs">→</span>
               </Link>
             ))}
-            <div className="pt-4">
+            <div className="pt-6 border-t border-[#1A1208]/10 mt-2">
               <Link
                 to="/early-access"
                 className="w-full inline-flex items-center justify-center py-3.5 bg-[#D4541A] text-[#F7F0E3] text-xs uppercase tracking-[0.2em] font-medium rounded-sm shadow-md"
